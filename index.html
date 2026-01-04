@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Neda Amirirad | Academic Website</title>
-  <meta name="description" content="Neda Amirirad — Ph.D. Student in Industrial Engineering (SSIE) at Binghamton University. Optimization, decision analytics, healthcare systems." />
+  <meta name="description" content="Neda Amirirad — Ph.D. Student in Industrial Engineering (SSIE) at Binghamton University. Optimization, decision analytics, healthcare systems, network science." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,7 +125,7 @@
       background: #fff;
       font-weight: 700;
       font-size: 13px;
-      transition: transform .12s ease, box-shadow .12s ease;
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
     }
     .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(2,6,23,.12); }
     .btn.primary{
@@ -160,8 +160,9 @@
       background: #fff;
       font-size: 12px;
       font-weight: 700;
+      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
     }
-    .chip:hover{ border-color: rgba(2,6,23,.18); }
+    .chip:hover{ transform: translateY(-1px); border-color: rgba(2,6,23,.18); box-shadow: 0 10px 20px rgba(2,6,23,.08); }
 
     /* Sections */
     .grid{
@@ -272,10 +273,10 @@
         </div>
 
         <div class="links">
-          <a class="chip" href="https://github.com/nedachocolate63">GitHub</a>
-          <a class="chip" href="#">https://scholar.google.com/citations?user=S21ltO4AAAAJ&hl=en</a>
-          <a class="chip" href="#">https://www.linkedin.com/in/nedaamirirad/</a>
-          
+          <a class="chip" href="https://github.com/nedachocolate63" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="chip" href="https://scholar.google.com/citations?user=S21ltO4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a class="chip" href="https://linkedin.com/in/nedaamirirad/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="chip" href="#" title="Add your ORCID link">ORCID</a>
         </div>
       </aside>
     </section>
@@ -306,15 +307,15 @@
           <li>
             <div class="item-title">Add your publications here</div>
             <div class="item-meta">
-              Author, A.; Amirirad, N.; … “Paper Title.” <i>Journal/Conference</i>, Year.
-              · <a href="#">PDF</a> · <a href="#">DOI</a>
+              Amirirad, N.; … “Paper Title.” <i>Journal/Conference</i>, Year.
+              · <a href="#" target="_blank" rel="noopener noreferrer">PDF</a> · <a href="#" target="_blank" rel="noopener noreferrer">DOI</a>
             </div>
           </li>
           <li>
-            <div class="item-title">Example publication with links</div>
+            <div class="item-title">Tip: use Google Scholar</div>
             <div class="item-meta">
-              Author, A.; Amirirad, N.; … “Paper Title.” <i>Venue</i>, Year.
-              · <a href="#">Code</a>
+              You can copy your publication titles from your Scholar profile and paste them here.
+              · <a href="https://scholar.google.com/citations?user=S21ltO4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Scholar</a>
             </div>
           </li>
         </ul>
@@ -324,12 +325,12 @@
         <h2><span class="icon"></span> Selected Projects</h2>
         <ul class="list">
           <li>
-            <div class="item-title">Project Name</div>
-            <div class="item-meta">One-line description. · <a href="#">Code</a> · <a href="#">Paper</a></div>
+            <div class="item-title">Decision-support for healthcare (example)</div>
+            <div class="item-meta">Optimization + behavioral modeling for treatment decisions. · <a href="#" target="_blank" rel="noopener noreferrer">Code</a></div>
           </li>
           <li>
-            <div class="item-title">Project Name</div>
-            <div class="item-meta">One-line description. · <a href="#">Demo</a></div>
+            <div class="item-title">Network science for autoimmune diseases (example)</div>
+            <div class="item-meta">Community detection on gene co-expression networks. · <a href="#" target="_blank" rel="noopener noreferrer">Repo</a></div>
           </li>
         </ul>
       </div>
@@ -340,15 +341,44 @@
           Download my latest CV (PDF).
         </p>
         <a class="btn primary" href="Neda_Amirirad_Postdoc.pdf">Download CV</a>
+        <p class="item-meta" style="margin:10px 0 0">
+          Direct link: <a href="Neda_Amirirad_Postdoc.pdf">Neda_Amirirad_Postdoc.pdf</a>
+        </p>
       </div>
 
       <div id="contact" class="card section" style="grid-column:1/-1">
         <h2><span class="icon"></span> Contact</h2>
         <ul class="list">
-          <li><div class="item-title">Email</div><div class="item-meta"><a href="mailto:namirirad@binghamton.edu">namirirad@binghamton.edu</a></div></li>
-          <li><div class="item-title">GitHub</div><div class="item-meta"><a href="https://github.com/nedachocolate63">github.com/nedachocolate63</a></div></li>
-          <li><div class="item-title">Google Scholar</div><div class="item-meta"><a href="#">Add link</a></div></li>
-          <li><div class="item-title">LinkedIn</div><div class="item-meta"><a href="#">Add link</a></div></li>
+          <li>
+            <div class="item-title">Email</div>
+            <div class="item-meta">
+              <a href="mailto:namirirad@binghamton.edu">namirirad@binghamton.edu</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Google Scholar</div>
+            <div class="item-meta">
+              <a href="https://scholar.google.com/citations?user=S21ltO4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+                scholar.google.com/citations?user=S21ltO4AAAAJ
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">LinkedIn</div>
+            <div class="item-meta">
+              <a href="https://linkedin.com/in/nedaamirirad/" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/nedaamirirad
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">GitHub</div>
+            <div class="item-meta">
+              <a href="https://github.com/nedachocolate63" target="_blank" rel="noopener noreferrer">
+                github.com/nedachocolate63
+              </a>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
