@@ -29,15 +29,36 @@
 
     *{ box-sizing:border-box }
     html,body{ margin:0; padding:0 }
+
     body{
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+
       font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       line-height: 1.65;
+
       background:
         radial-gradient(1000px 520px at 10% 0%, rgba(109,40,217,.18), transparent 60%),
         radial-gradient(900px 520px at 70% 10%, rgba(37,99,235,.18), transparent 60%),
         radial-gradient(900px 520px at 90% 30%, rgba(6,182,212,.15), transparent 60%),
         linear-gradient(180deg, #f8fafc, #ffffff 40%, #f8fafc);
+    }
+
+    /* ✅ FAINT NETWORK BACKGROUND (upload: network.png in repo root) */
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background-image: url("network.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.06;                 /* 👈 کم‌رنگ (می‌تونی 0.04 تا 0.10 تغییر بدی) */
+      filter: grayscale(100%);       /* آکادمیک‌تر */
+      pointer-events: none;
+      z-index: -1;
     }
 
     a{ color: inherit; text-decoration: none; }
@@ -251,7 +272,7 @@
       <div class="card hero-left">
         <span class="badge"><span class="dot"></span> Ph.D. Student · Industrial Engineering</span>
         <h1>Neda Amirirad</h1>
-        <p class="subtitle">Binghamton University · Systems Science & Industrial Engineering (SSIE)</p>
+        <p class="subtitle">Binghamton University · Systems Science &amp; Industrial Engineering (SSIE)</p>
         <p class="lead">
           I am a Ph.D. student in Industrial Engineering (Systems Science &amp; Industrial Engineering, SSIE) at Binghamton University.
           My research lies at the intersection of optimization, decision analytics, and network science, with a focus on biomedical and
@@ -304,7 +325,6 @@
           <span class="pill p3">Machine Learning</span>
           <span class="pill p4">Healthcare & Biomedical Systems</span>
           <span class="pill p5">Network Science & Systems Biology</span>
-
         </div>
       </div>
 
