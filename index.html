@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neda Amirirad | Academic Website</title>
+  <style>
+    :root { --max: 900px; }
+    body { font-family: Arial, sans-serif; margin: 0; line-height: 1.65; color: #111; }
+    header { border-bottom: 1px solid #eee; }
+    nav { max-width: var(--max); margin: 0 auto; padding: 18px 18px; display:flex; gap:16px; flex-wrap:wrap; }
+    nav a { color:#111; text-decoration:none; font-weight:600; }
+    main { max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px; }
+    h1 { margin: 0 0 6px; font-size: 2rem; }
+    .subtitle { margin: 0 0 18px; color:#444; }
+    section { margin-top: 32px; }
+    h2 { font-size: 1.2rem; margin: 0 0 10px; }
+    ul { margin: 8px 0 0 20px; }
+    .pill { display:inline-block; border:1px solid #eee; padding:6px 10px; border-radius: 999px; margin: 6px 8px 0 0; font-size: 0.95rem; }
+    footer { border-top:1px solid #eee; padding: 18px; color:#555; }
+    .muted { color:#555; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Neda Amirirad</h1>
+    <p class="subtitle">Ph.D. Student, Industrial Engineering (SSIE) — Binghamton University</p>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a Ph.D. student in Industrial Engineering (Systems Science & Industrial Engineering) at Binghamton University.
+        My interests include optimization, decision analytics, and data-driven modeling for healthcare.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <span class="pill">Optimization</span>
+      <span class="pill">Decision Analytics</span>
+      <span class="pill">Machine Learning</span>
+      <span class="pill">Healthcare Systems</span>
+      <span class="pill">Network Science</span>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul>
+        <li><span class="muted">Add your papers here in a standard format (authors, title, venue, year).</span></li>
+        <li>Author, A., Amirirad, N., ... “Paper Title.” <i>Conference/Journal</i>, Year.</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <ul>
+        <li><b>Project Name</b> — one-line description. <a href="#">Code</a> · <a href="#">Paper</a></li>
+        <li><b>Project Name</b> — one-line description. <a href="#">Code</a> · <a href="#">Demo</a></li>
+      </ul>
+    </section>
+
+    <section id="cv">
+      <h2>CV</h2>
+      <p>
+        <a href="cv.pdf">Download CV (PDF)</a>
+        <span class="muted">— upload your CV to this repository as <code>cv.pdf</code>.</span>
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:namirirad@binghamton.edu">namirirad@binghamton.edu</a></li>
+        <li>GitHub: <a href="https://github.com/">github.com/USERNAME</a></li>
+        <li>Google Scholar: <a href="#">Link</a></li>
+        <li>LinkedIn: <a href="#">Link</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div style="max-width:900px;margin:0 auto;">
+      © <span id="y"></span> Neda Amirirad
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
