@@ -4,160 +4,235 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Neda Amirirad | Academic Website</title>
-  <meta name="description" content="Neda Amirirad — Ph.D. Student in Industrial Engineering (SSIE) at Binghamton University. Research: optimization, decision analytics, healthcare systems, network science." />
+  <meta name="description" content="Neda Amirirad — Ph.D. Student in Industrial Engineering (SSIE) at Binghamton University. Optimization, decision analytics, healthcare systems." />
 
-  <!-- Modern font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#0f1a2e;
-      --muted:#9fb0cc;
-      --text:#eaf0ff;
-      --line:rgba(255,255,255,.12);
-      --accent:#7c5cff;
-      --accent2:#31d3c6;
-      --max:1100px;
-      --shadow: 0 14px 40px rgba(0,0,0,.35);
-      --radius:18px;
+      --max: 1120px;
+      --text: #0f172a;
+      --muted:#475569;
+      --card:#ffffff;
+      --line: rgba(2,6,23,.10);
+      --shadow: 0 14px 40px rgba(2,6,23,.10);
+      --radius: 18px;
+
+      --a1:#6d28d9;   /* purple */
+      --a2:#2563eb;   /* blue   */
+      --a3:#06b6d4;   /* cyan   */
+      --a4:#22c55e;   /* green  */
+      --a5:#f97316;   /* orange */
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
+
+    *{ box-sizing:border-box }
+    html,body{ margin:0; padding:0 }
     body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
       background:
-        radial-gradient(900px 500px at 20% 0%, rgba(124,92,255,.25), transparent 60%),
-        radial-gradient(900px 500px at 80% 10%, rgba(49,211,198,.18), transparent 60%),
-        radial-gradient(1200px 600px at 50% 120%, rgba(255,255,255,.06), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.7;
+        radial-gradient(1000px 520px at 10% 0%, rgba(109,40,217,.18), transparent 60%),
+        radial-gradient(900px 520px at 70% 10%, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(900px 520px at 90% 30%, rgba(6,182,212,.15), transparent 60%),
+        linear-gradient(180deg, #f8fafc, #ffffff 40%, #f8fafc);
     }
-    a{color:inherit}
-    .container{max-width:var(--max);margin:0 auto;padding:26px 18px 70px}
+
+    a{ color: inherit; text-decoration: none; }
+    .container{ max-width: var(--max); margin: 0 auto; padding: 22px 16px 70px; }
+
+    /* Top nav (glass) */
     .topbar{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      position:sticky; top:0; z-index:5;
-      padding:14px 18px;
-      margin: -26px -18px 24px;
-      background: rgba(11,18,32,.7);
+      position: sticky; top: 0; z-index: 10;
+      margin: -22px -16px 22px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.6);
+      background: rgba(255,255,255,.65);
       backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
     }
-    .brand{display:flex; flex-direction:column; gap:2px}
-    .brand b{font-size:14px; letter-spacing:.2px}
-    .brand span{font-size:12px; color:var(--muted)}
-    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .topbar-inner{
+      max-width: var(--max); margin: 0 auto;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .brand{ display:flex; flex-direction:column; gap:2px; }
+    .brand b{ font-size: 14px; }
+    .brand span{ font-size: 12px; color: var(--muted); }
+
+    nav{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
     nav a{
-      text-decoration:none; font-size:13px; color:var(--muted);
-      padding:8px 10px; border-radius:10px;
-      border:1px solid transparent;
+      font-size: 13px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(2,6,23,.08);
+      background: rgba(255,255,255,.7);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
     }
-    nav a:hover{color:var(--text); border-color:var(--line); background: rgba(255,255,255,.04)}
+    nav a:hover{ transform: translateY(-1px); border-color: rgba(2,6,23,.15); background:#fff; }
+
+    /* Hero */
     .hero{
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:18px;
-      align-items:stretch;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 6px;
     }
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-    .hero-left{padding:26px}
-    .hero-right{padding:20px}
-    .kicker{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:8px 12px; border-radius:999px;
-      border:1px solid var(--line); color:var(--muted);
-      background: rgba(255,255,255,.03);
-      font-size:13px;
+    .hero-left{ padding: 24px; position:relative; overflow:hidden; }
+    .hero-left::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 280px at 15% 0%, rgba(109,40,217,.22), transparent 55%),
+        radial-gradient(520px 280px at 70% 10%, rgba(37,99,235,.22), transparent 55%),
+        radial-gradient(520px 280px at 95% 25%, rgba(6,182,212,.20), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-left > *{ position:relative; }
+
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(109,40,217,.10);
+      border: 1px solid rgba(109,40,217,.18);
+      color: #3b0764;
+      font-size: 13px;
+      font-weight: 600;
     }
     .dot{
       width:10px;height:10px;border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, var(--accent2), var(--accent));
-      box-shadow: 0 0 0 6px rgba(124,92,255,.14);
+      background: linear-gradient(90deg, var(--a1), var(--a3));
+      box-shadow: 0 0 0 6px rgba(109,40,217,.12);
     }
-    h1{margin:14px 0 6px; font-size:38px; line-height:1.15}
-    .subtitle{margin:0 0 16px; color:var(--muted)}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    h1{ margin: 14px 0 8px; font-size: 40px; line-height: 1.1; }
+    .subtitle{ margin:0 0 14px; color: var(--muted); font-size: 14px; }
+    .lead{ margin: 0; color: #0f172a; font-size: 15px; max-width: 65ch; }
+
+    .cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 16px; }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:10px 14px; border-radius:12px; font-weight:600; font-size:13px;
-      border:1px solid var(--line); text-decoration:none;
-      background: rgba(255,255,255,.04);
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(2,6,23,.10);
+      background: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      transition: transform .12s ease, box-shadow .12s ease;
     }
-    .btn:hover{background: rgba(255,255,255,.07)}
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(2,6,23,.12); }
     .btn.primary{
-      border-color: transparent;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color:#061022;
+      border: none;
+      color: white;
+      background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3));
     }
-    .btn.primary:hover{filter:brightness(1.02)}
-    .grid{
-      display:grid; gap:18px; margin-top:18px;
-      grid-template-columns: 1fr 1fr;
+    .btn.secondary{
+      background: linear-gradient(90deg, rgba(34,197,94,.14), rgba(6,182,212,.12));
+      border-color: rgba(6,182,212,.25);
+      color:#064e3b;
     }
-    .section{padding:20px}
-    .section h2{margin:0 0 10px; font-size:16px}
-    .pill{
-      display:inline-flex; align-items:center;
-      padding:7px 10px; border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color:var(--text);
-      margin:8px 8px 0 0;
-      font-size:13px;
-    }
-    .muted{color:var(--muted)}
-    .list{margin:10px 0 0; padding:0; list-style:none}
-    .list li{
-      padding:12px 0;
-      border-top:1px solid var(--line);
-    }
-    .list li:first-child{border-top:none}
-    .pub-title{font-weight:600}
-    .pub-meta{color:var(--muted); font-size:13px}
-    .two-col{
-      display:grid; grid-template-columns: 1fr; gap:10px;
-    }
+
+    /* Sidebar info */
+    .hero-right{ padding: 18px; }
+    .mini-grid{ display:grid; gap:10px; }
     .kv{
-      display:flex; justify-content:space-between; gap:14px;
-      padding:10px 12px; border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      font-size:13px;
+      display:flex; justify-content:space-between; gap:12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(2,6,23,.08);
+      background: linear-gradient(180deg, #fff, #f8fafc);
+      font-size: 13px;
     }
-    .kv b{font-weight:600}
+    .kv span{ color: var(--muted); }
+    .kv b{ font-weight: 700; }
+    .links{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+    .chip{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(2,6,23,.08);
+      background: #fff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .chip:hover{ border-color: rgba(2,6,23,.18); }
+
+    /* Sections */
+    .grid{
+      display:grid; gap: 18px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 18px;
+    }
+    .section{ padding: 18px; }
+    .section h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .icon{
+      width: 12px; height:12px; border-radius:4px;
+      background: linear-gradient(90deg, var(--a5), var(--a3));
+    }
+    .pills .pill{
+      display:inline-flex;
+      padding: 8px 11px;
+      border-radius: 999px;
+      margin: 8px 8px 0 0;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid rgba(2,6,23,.08);
+      background: #fff;
+    }
+    .pill.p1{ background: rgba(109,40,217,.10); border-color: rgba(109,40,217,.18); }
+    .pill.p2{ background: rgba(37,99,235,.10); border-color: rgba(37,99,235,.18); }
+    .pill.p3{ background: rgba(6,182,212,.10); border-color: rgba(6,182,212,.18); }
+    .pill.p4{ background: rgba(34,197,94,.10); border-color: rgba(34,197,94,.18); }
+    .pill.p5{ background: rgba(249,115,22,.12); border-color: rgba(249,115,22,.20); }
+
+    .list{ margin: 10px 0 0; padding: 0; list-style: none; }
+    .list li{
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(2,6,23,.08);
+      background: #fff;
+      margin-top: 10px;
+    }
+    .list li:first-child{ margin-top: 0; }
+    .item-title{ font-weight: 800; }
+    .item-meta{ color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .item-meta a{ text-decoration: underline; text-underline-offset: 3px; }
+
     footer{
-      margin-top:24px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:12px;
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(2,6,23,.08);
+      color: var(--muted);
+      font-size: 12px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
     }
+
     @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      h1{font-size:32px}
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      h1{ font-size: 32px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-
-    <div class="topbar">
+  <div class="topbar">
+    <div class="topbar-inner">
       <div class="brand">
         <b>Neda Amirirad</b>
-        <span>Industrial Engineering (SSIE) · Binghamton University</span>
+        <span>SSIE · Binghamton University</span>
       </div>
+
       <nav>
         <a href="#about">About</a>
         <a href="#research">Research</a>
@@ -167,118 +242,121 @@
         <a href="#contact">Contact</a>
       </nav>
     </div>
+  </div>
 
-    <div class="hero">
+  <div class="container">
+
+    <section class="hero">
       <div class="card hero-left">
-        <span class="kicker"><span class="dot"></span> Ph.D. Student · Systems Science & Industrial Engineering</span>
+        <span class="badge"><span class="dot"></span> Ph.D. Student · Industrial Engineering</span>
         <h1>Neda Amirirad</h1>
-        <p class="subtitle">
-          I work on optimization and decision analytics for healthcare systems, with interests in machine learning and network science.
+        <p class="subtitle">Binghamton University · Systems Science & Industrial Engineering (SSIE)</p>
+        <p class="lead">
+          I build quantitative decision-support methods for healthcare by combining optimization, decision analytics,
+          and data-driven modeling.
         </p>
 
         <div class="cta">
-          <a class="btn primary" href="#cv">Download CV</a>
-          <a class="btn" href="#publications">View Publications</a>
+          <a class="btn primary" href="Neda_Amirirad_Postdoc.pdf">Download CV</a>
+          <a class="btn secondary" href="#publications">Publications</a>
           <a class="btn" href="#contact">Contact</a>
-        </div>
-
-        <div style="margin-top:18px" class="muted">
-          <small>Currently based in Binghamton, NY · Open to collaborations</small>
         </div>
       </div>
 
-      <div class="card hero-right">
-        <div class="two-col">
+      <aside class="card hero-right">
+        <div class="mini-grid">
           <div class="kv"><span>Affiliation</span><b>Binghamton University</b></div>
-          <div class="kv"><span>Department</span><b>SSIE / Industrial Engineering</b></div>
+          <div class="kv"><span>Program</span><b>Ph.D., Industrial Engineering</b></div>
           <div class="kv"><span>Email</span><b><a href="mailto:namirirad@binghamton.edu">namirirad@binghamton.edu</a></b></div>
           <div class="kv"><span>Location</span><b>Binghamton, NY</b></div>
         </div>
-        <div style="margin-top:14px" class="muted">
-          Add links: Google Scholar · ORCID · LinkedIn · GitHub
+
+        <div class="links">
+          <a class="chip" href="https://github.com/nedachocolate63">GitHub</a>
+          <a class="chip" href="#">Google Scholar</a>
+          <a class="chip" href="#">LinkedIn</a>
+          <a class="chip" href="#">ORCID</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="grid">
+      <div class="card section">
+        <h2><span class="icon"></span> About</h2>
+        <p class="item-meta" style="margin:0">
+          I am a Ph.D. student in Industrial Engineering (SSIE) at Binghamton University. My work focuses on
+          optimization and decision analytics for healthcare systems.
+        </p>
+      </div>
+
+      <div id="research" class="card section">
+        <h2><span class="icon"></span> Research Interests</h2>
+        <div class="pills">
+          <span class="pill p1">Optimization</span>
+          <span class="pill p2">Decision Analytics</span>
+          <span class="pill p3">Machine Learning</span>
+          <span class="pill p4">Healthcare Systems</span>
+          <span class="pill p5">Network Science</span>
         </div>
       </div>
-    </div>
 
-    <div class="grid">
-      <section id="about" class="card section">
-        <h2>About</h2>
-        <p class="muted" style="margin:0">
-          I am a Ph.D. student in Industrial Engineering (Systems Science & Industrial Engineering) at Binghamton University.
-          My work focuses on building quantitative decision support methods for healthcare, combining optimization and data-driven modeling.
-        </p>
-      </section>
-
-      <section id="research" class="card section">
-        <h2>Research Interests</h2>
-        <div>
-          <span class="pill">Optimization</span>
-          <span class="pill">Decision Analytics</span>
-          <span class="pill">Machine Learning</span>
-          <span class="pill">Healthcare Systems</span>
-          <span class="pill">Network Science</span>
-        </div>
-      </section>
-
-      <section id="publications" class="card section" style="grid-column:1/-1">
-        <h2>Publications</h2>
+      <div id="publications" class="card section" style="grid-column:1/-1">
+        <h2><span class="icon"></span> Publications</h2>
         <ul class="list">
           <li>
-            <div class="pub-title">Add your publications here (example format)</div>
-            <div class="pub-meta">Author, A.; Amirirad, N.; … “Paper Title.” <i>Journal/Conference</i>, Year.</div>
+            <div class="item-title">Add your publications here</div>
+            <div class="item-meta">
+              Author, A.; Amirirad, N.; … “Paper Title.” <i>Journal/Conference</i>, Year.
+              · <a href="#">PDF</a> · <a href="#">DOI</a>
+            </div>
           </li>
           <li>
-            <div class="pub-title">You can also include links</div>
-            <div class="pub-meta">
+            <div class="item-title">Example publication with links</div>
+            <div class="item-meta">
               Author, A.; Amirirad, N.; … “Paper Title.” <i>Venue</i>, Year.
-              · <a href="#" class="muted">PDF</a> · <a href="#" class="muted">Code</a>
+              · <a href="#">Code</a>
             </div>
           </li>
         </ul>
-      </section>
+      </div>
 
-      <section id="projects" class="card section">
-        <h2>Selected Projects</h2>
+      <div id="projects" class="card section">
+        <h2><span class="icon"></span> Selected Projects</h2>
         <ul class="list">
           <li>
-            <div class="pub-title">Project Name</div>
-            <div class="pub-meta">One-line description. · <a href="#" class="muted">Code</a> · <a href="#" class="muted">Paper</a></div>
+            <div class="item-title">Project Name</div>
+            <div class="item-meta">One-line description. · <a href="#">Code</a> · <a href="#">Paper</a></div>
           </li>
           <li>
-            <div class="pub-title">Project Name</div>
-            <div class="pub-meta">One-line description. · <a href="#" class="muted">Demo</a></div>
+            <div class="item-title">Project Name</div>
+            <div class="item-meta">One-line description. · <a href="#">Demo</a></div>
           </li>
         </ul>
-      </section>
+      </div>
 
-      <section id="cv" class="card section">
-        <h2>CV</h2>
-        <p style="margin:0 0 10px" class="muted">
-          Download the latest version of my curriculum vitae:
+      <div id="cv" class="card section">
+        <h2><span class="icon"></span> CV</h2>
+        <p class="item-meta" style="margin:0 0 10px">
+          Download my latest CV (PDF).
         </p>
-        <a class="btn primary" href="Neda_Amirirad_Postdoc.pdf">Download CV (PDF)</a>
-        <p class="muted" style="margin:10px 0 0; font-size:13px">
-          Tip: keep the PDF in the repository root (same folder as <code>index.html</code>).
-        </p>
-      </section>
+        <a class="btn primary" href="Neda_Amirirad_Postdoc.pdf">Download CV</a>
+      </div>
 
-      <section id="contact" class="card section" style="grid-column:1/-1">
-        <h2>Contact</h2>
+      <div id="contact" class="card section" style="grid-column:1/-1">
+        <h2><span class="icon"></span> Contact</h2>
         <ul class="list">
-          <li><b>Email:</b> <a href="mailto:namirirad@binghamton.edu" class="muted">namirirad@binghamton.edu</a></li>
-          <li><b>GitHub:</b> <a href="https://github.com/nedachocolate63" class="muted">github.com/nedachocolate63</a></li>
-          <li><b>Google Scholar:</b> <a href="#" class="muted">Add link</a></li>
-          <li><b>LinkedIn:</b> <a href="#" class="muted">Add link</a></li>
-          <li><b>ORCID:</b> <a href="#" class="muted">Add link</a></li>
+          <li><div class="item-title">Email</div><div class="item-meta"><a href="mailto:namirirad@binghamton.edu">namirirad@binghamton.edu</a></div></li>
+          <li><div class="item-title">GitHub</div><div class="item-meta"><a href="https://github.com/nedachocolate63">github.com/nedachocolate63</a></div></li>
+          <li><div class="item-title">Google Scholar</div><div class="item-meta"><a href="#">Add link</a></div></li>
+          <li><div class="item-title">LinkedIn</div><div class="item-meta"><a href="#">Add link</a></div></li>
         </ul>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <footer>
       <span>© <span id="y"></span> Neda Amirirad</span>
-      <span class="muted">Built with GitHub Pages</span>
+      <span>Built with GitHub Pages</span>
     </footer>
-
   </div>
 
   <script>
