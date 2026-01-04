@@ -4,96 +4,282 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Neda Amirirad | Academic Website</title>
+  <meta name="description" content="Neda Amirirad — Ph.D. Student in Industrial Engineering (SSIE) at Binghamton University. Research: optimization, decision analytics, healthcare systems, network science." />
+
+  <!-- Modern font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root { --max: 900px; }
-    body { font-family: Arial, sans-serif; margin: 0; line-height: 1.65; color: #111; }
-    header { border-bottom: 1px solid #eee; }
-    nav { max-width: var(--max); margin: 0 auto; padding: 18px 18px; display:flex; gap:16px; flex-wrap:wrap; }
-    nav a { color:#111; text-decoration:none; font-weight:600; }
-    main { max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px; }
-    h1 { margin: 0 0 6px; font-size: 2rem; }
-    .subtitle { margin: 0 0 18px; color:#444; }
-    section { margin-top: 32px; }
-    h2 { font-size: 1.2rem; margin: 0 0 10px; }
-    ul { margin: 8px 0 0 20px; }
-    .pill { display:inline-block; border:1px solid #eee; padding:6px 10px; border-radius: 999px; margin: 6px 8px 0 0; font-size: 0.95rem; }
-    footer { border-top:1px solid #eee; padding: 18px; color:#555; }
-    .muted { color:#555; }
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a2e;
+      --muted:#9fb0cc;
+      --text:#eaf0ff;
+      --line:rgba(255,255,255,.12);
+      --accent:#7c5cff;
+      --accent2:#31d3c6;
+      --max:1100px;
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(900px 500px at 80% 10%, rgba(49,211,198,.18), transparent 60%),
+        radial-gradient(1200px 600px at 50% 120%, rgba(255,255,255,.06), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:26px 18px 70px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      position:sticky; top:0; z-index:5;
+      padding:14px 18px;
+      margin: -26px -18px 24px;
+      background: rgba(11,18,32,.7);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .brand{display:flex; flex-direction:column; gap:2px}
+    .brand b{font-size:14px; letter-spacing:.2px}
+    .brand span{font-size:12px; color:var(--muted)}
+    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      text-decoration:none; font-size:13px; color:var(--muted);
+      padding:8px 10px; border-radius:10px;
+      border:1px solid transparent;
+    }
+    nav a:hover{color:var(--text); border-color:var(--line); background: rgba(255,255,255,.04)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:26px}
+    .hero-right{padding:20px}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line); color:var(--muted);
+      background: rgba(255,255,255,.03);
+      font-size:13px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent2), var(--accent));
+      box-shadow: 0 0 0 6px rgba(124,92,255,.14);
+    }
+    h1{margin:14px 0 6px; font-size:38px; line-height:1.15}
+    .subtitle{margin:0 0 16px; color:var(--muted)}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:10px 14px; border-radius:12px; font-weight:600; font-size:13px;
+      border:1px solid var(--line); text-decoration:none;
+      background: rgba(255,255,255,.04);
+    }
+    .btn:hover{background: rgba(255,255,255,.07)}
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color:#061022;
+    }
+    .btn.primary:hover{filter:brightness(1.02)}
+    .grid{
+      display:grid; gap:18px; margin-top:18px;
+      grid-template-columns: 1fr 1fr;
+    }
+    .section{padding:20px}
+    .section h2{margin:0 0 10px; font-size:16px}
+    .pill{
+      display:inline-flex; align-items:center;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      margin:8px 8px 0 0;
+      font-size:13px;
+    }
+    .muted{color:var(--muted)}
+    .list{margin:10px 0 0; padding:0; list-style:none}
+    .list li{
+      padding:12px 0;
+      border-top:1px solid var(--line);
+    }
+    .list li:first-child{border-top:none}
+    .pub-title{font-weight:600}
+    .pub-meta{color:var(--muted); font-size:13px}
+    .two-col{
+      display:grid; grid-template-columns: 1fr; gap:10px;
+    }
+    .kv{
+      display:flex; justify-content:space-between; gap:14px;
+      padding:10px 12px; border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      font-size:13px;
+    }
+    .kv b{font-weight:600}
+    footer{
+      margin-top:24px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      h1{font-size:32px}
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="container">
 
-  <main>
-    <h1>Neda Amirirad</h1>
-    <p class="subtitle">Ph.D. Student, Industrial Engineering (SSIE) — Binghamton University</p>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I am a Ph.D. student in Industrial Engineering (Systems Science & Industrial Engineering) at Binghamton University.
-        My interests include optimization, decision analytics, and data-driven modeling for healthcare.
-      </p>
-    </section>
-
-    <section id="research">
-      <h2>Research Interests</h2>
-      <span class="pill">Optimization</span>
-      <span class="pill">Decision Analytics</span>
-      <span class="pill">Machine Learning</span>
-      <span class="pill">Healthcare Systems</span>
-      <span class="pill">Network Science</span>
-    </section>
-
-    <section id="publications">
-      <h2>Publications</h2>
-      <ul>
-        <li><span class="muted">Add your papers here in a standard format (authors, title, venue, year).</span></li>
-        <li>Author, A., Amirirad, N., ... “Paper Title.” <i>Conference/Journal</i>, Year.</li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Selected Projects</h2>
-      <ul>
-        <li><b>Project Name</b> — one-line description. <a href="#">Code</a> · <a href="#">Paper</a></li>
-        <li><b>Project Name</b> — one-line description. <a href="#">Code</a> · <a href="#">Demo</a></li>
-      </ul>
-    </section>
-
-    <section id="cv">
-      <h2>CV</h2>
-      <p>
-        <a href="Neda_Amirirad_Postdoc.pdf">Download CV (PDF)</a>
-        <span class="muted">— upload your CV to this repository as <code>cv.pdf</code>.</span>
-      </p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:namirirad@binghamton.edu">namirirad@binghamton.edu</a></li>
-        <li>GitHub: <a href="https://github.com/">github.com/USERNAME</a></li>
-        <li>Google Scholar: <a href="#">Link</a></li>
-        <li>LinkedIn: <a href="#">Link</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <div style="max-width:900px;margin:0 auto;">
-      © <span id="y"></span> Neda Amirirad
+    <div class="topbar">
+      <div class="brand">
+        <b>Neda Amirirad</b>
+        <span>Industrial Engineering (SSIE) · Binghamton University</span>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </footer>
+
+    <div class="hero">
+      <div class="card hero-left">
+        <span class="kicker"><span class="dot"></span> Ph.D. Student · Systems Science & Industrial Engineering</span>
+        <h1>Neda Amirirad</h1>
+        <p class="subtitle">
+          I work on optimization and decision analytics for healthcare systems, with interests in machine learning and network science.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="#cv">Download CV</a>
+          <a class="btn" href="#publications">View Publications</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+
+        <div style="margin-top:18px" class="muted">
+          <small>Currently based in Binghamton, NY · Open to collaborations</small>
+        </div>
+      </div>
+
+      <div class="card hero-right">
+        <div class="two-col">
+          <div class="kv"><span>Affiliation</span><b>Binghamton University</b></div>
+          <div class="kv"><span>Department</span><b>SSIE / Industrial Engineering</b></div>
+          <div class="kv"><span>Email</span><b><a href="mailto:namirirad@binghamton.edu">namirirad@binghamton.edu</a></b></div>
+          <div class="kv"><span>Location</span><b>Binghamton, NY</b></div>
+        </div>
+        <div style="margin-top:14px" class="muted">
+          Add links: Google Scholar · ORCID · LinkedIn · GitHub
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section id="about" class="card section">
+        <h2>About</h2>
+        <p class="muted" style="margin:0">
+          I am a Ph.D. student in Industrial Engineering (Systems Science & Industrial Engineering) at Binghamton University.
+          My work focuses on building quantitative decision support methods for healthcare, combining optimization and data-driven modeling.
+        </p>
+      </section>
+
+      <section id="research" class="card section">
+        <h2>Research Interests</h2>
+        <div>
+          <span class="pill">Optimization</span>
+          <span class="pill">Decision Analytics</span>
+          <span class="pill">Machine Learning</span>
+          <span class="pill">Healthcare Systems</span>
+          <span class="pill">Network Science</span>
+        </div>
+      </section>
+
+      <section id="publications" class="card section" style="grid-column:1/-1">
+        <h2>Publications</h2>
+        <ul class="list">
+          <li>
+            <div class="pub-title">Add your publications here (example format)</div>
+            <div class="pub-meta">Author, A.; Amirirad, N.; … “Paper Title.” <i>Journal/Conference</i>, Year.</div>
+          </li>
+          <li>
+            <div class="pub-title">You can also include links</div>
+            <div class="pub-meta">
+              Author, A.; Amirirad, N.; … “Paper Title.” <i>Venue</i>, Year.
+              · <a href="#" class="muted">PDF</a> · <a href="#" class="muted">Code</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="projects" class="card section">
+        <h2>Selected Projects</h2>
+        <ul class="list">
+          <li>
+            <div class="pub-title">Project Name</div>
+            <div class="pub-meta">One-line description. · <a href="#" class="muted">Code</a> · <a href="#" class="muted">Paper</a></div>
+          </li>
+          <li>
+            <div class="pub-title">Project Name</div>
+            <div class="pub-meta">One-line description. · <a href="#" class="muted">Demo</a></div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="cv" class="card section">
+        <h2>CV</h2>
+        <p style="margin:0 0 10px" class="muted">
+          Download the latest version of my curriculum vitae:
+        </p>
+        <a class="btn primary" href="Neda_Amirirad_Postdoc.pdf">Download CV (PDF)</a>
+        <p class="muted" style="margin:10px 0 0; font-size:13px">
+          Tip: keep the PDF in the repository root (same folder as <code>index.html</code>).
+        </p>
+      </section>
+
+      <section id="contact" class="card section" style="grid-column:1/-1">
+        <h2>Contact</h2>
+        <ul class="list">
+          <li><b>Email:</b> <a href="mailto:namirirad@binghamton.edu" class="muted">namirirad@binghamton.edu</a></li>
+          <li><b>GitHub:</b> <a href="https://github.com/nedachocolate63" class="muted">github.com/nedachocolate63</a></li>
+          <li><b>Google Scholar:</b> <a href="#" class="muted">Add link</a></li>
+          <li><b>LinkedIn:</b> <a href="#" class="muted">Add link</a></li>
+          <li><b>ORCID:</b> <a href="#" class="muted">Add link</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <span>© <span id="y"></span> Neda Amirirad</span>
+      <span class="muted">Built with GitHub Pages</span>
+    </footer>
+
+  </div>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
