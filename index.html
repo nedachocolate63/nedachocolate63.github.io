@@ -163,19 +163,16 @@
     /* Sidebar info */
     .hero-right{ padding: 18px; }
 
-    /* ✅ PHOTO (place your image file in repo root, e.g., profile.jpg) */
-    .photo-wrap{
-      display:flex;
-      justify-content:center;
-      margin-bottom: 14px;
-    }
+    /* ✅ RECTANGULAR PHOTO (full width inside the right card) */
+    .photo-wrap{ margin-bottom: 14px; }
     .photo{
-      width: 150px;
-      height: 150px;
+      width: 100%;
+      height: 230px;               /* adjust if needed (180–280) */
       object-fit: cover;
-      border-radius: 999px;
-      border: 3px solid rgba(255,255,255,.92);
-      box-shadow: 0 14px 30px rgba(2,6,23,.18);
+      border-radius: 16px;         /* set to 0 for sharp corners */
+      border: 1px solid rgba(2,6,23,.08);
+      box-shadow: 0 14px 30px rgba(2,6,23,.12);
+      display: block;
     }
 
     .mini-grid{ display:grid; gap:10px; }
@@ -259,7 +256,7 @@
       .hero{ grid-template-columns: 1fr; }
       .grid{ grid-template-columns: 1fr; }
       h1{ font-size: 32px; }
-      .photo{ width: 132px; height: 132px; }
+      .photo{ height: 210px; }
     }
   </style>
 </head>
@@ -276,6 +273,7 @@
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
         <a href="#projects">Projects</a>
         <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
@@ -305,9 +303,8 @@
       </div>
 
       <aside class="card hero-right">
-        <!-- ✅ ADD PHOTO HERE (image in repo root) -->
         <div class="photo-wrap">
-          <!-- 🔁 Replace profile.jpg with your exact file name in root -->
+          <!-- 🔁 If your file name is different, change it here -->
           <img src="profile.jpg" alt="Neda Amirirad" class="photo" />
         </div>
 
@@ -365,6 +362,28 @@
               · <a href="https://arxiv.org/pdf/2509.00897" target="_blank" rel="noopener noreferrer">PDF</a>
               · <a href="https://arxiv.org/abs/2509.00897" target="_blank" rel="noopener noreferrer">arXiv</a>
               · <a href="https://scholar.google.com/citations?user=S21ltO4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="talks" class="card section" style="grid-column:1/-1">
+        <h2><span class="icon"></span> Talks</h2>
+        <ul class="list">
+          <li>
+            <div class="item-title">
+              Profiling Depression Risk Groups Among Students Using PCA and Cluster Analysis: Identifying Hidden Risk Patterns in Lifestyle and Academic Stress Factors
+            </div>
+            <div class="item-meta">
+              INFORMS Annual Meeting 2025 · Atlanta, GA
+            </div>
+          </li>
+          <li>
+            <div class="item-title">
+              Network Community Detection and Novelty Scoring Reveal Underexplored Hub Genes in Rheumatoid Arthritis
+            </div>
+            <div class="item-meta">
+              Complex Networks 2025 · Binghamton University · (Led to a paper)
             </div>
           </li>
         </ul>
