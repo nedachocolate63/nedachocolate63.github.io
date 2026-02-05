@@ -55,8 +55,8 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      opacity: 0.06;                 /* 👈 کم‌رنگ (می‌تونی 0.04 تا 0.10 تغییر بدی) */
-      filter: grayscale(100%);       /* آکادمیک‌تر */
+      opacity: 0.06;
+      filter: grayscale(100%);
       pointer-events: none;
       z-index: -1;
     }
@@ -162,6 +162,22 @@
 
     /* Sidebar info */
     .hero-right{ padding: 18px; }
+
+    /* ✅ PHOTO (place your image file in repo root, e.g., profile.jpg) */
+    .photo-wrap{
+      display:flex;
+      justify-content:center;
+      margin-bottom: 14px;
+    }
+    .photo{
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 3px solid rgba(255,255,255,.92);
+      box-shadow: 0 14px 30px rgba(2,6,23,.18);
+    }
+
     .mini-grid{ display:grid; gap:10px; }
     .kv{
       display:flex; justify-content:space-between; gap:12px;
@@ -243,6 +259,7 @@
       .hero{ grid-template-columns: 1fr; }
       .grid{ grid-template-columns: 1fr; }
       h1{ font-size: 32px; }
+      .photo{ width: 132px; height: 132px; }
     }
   </style>
 </head>
@@ -288,6 +305,12 @@
       </div>
 
       <aside class="card hero-right">
+        <!-- ✅ ADD PHOTO HERE (image in repo root) -->
+        <div class="photo-wrap">
+          <!-- 🔁 Replace profile.jpg with your exact file name in root -->
+          <img src="profile.jpg" alt="Neda Amirirad" class="photo" />
+        </div>
+
         <div class="mini-grid">
           <div class="kv"><span>Affiliation</span><b>Binghamton University</b></div>
           <div class="kv"><span>Program</span><b>Ph.D., Industrial and Systems Engineering</b></div>
